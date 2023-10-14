@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
 
+/* VARIABLES */
+:root {
+	--corner-radius: .2rem;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -11,7 +16,7 @@ html {
 }
 
 img {
-	width: 100%;
+	width: 1rem;
 	display: block;
 }
 
@@ -36,29 +41,42 @@ body {
 	margin: 2rem;
 }
 
-.product-grid p:nth-child(2) {
+.summary-paragraph {
 	line-height: 1.3rem;
 	text-align: center;
 	margin-bottom: 2rem;
+	color: hsl(303, 10%, 53%);
 }
 
-.product-grid div:nth-child(3), 
-:nth-child(4), 
-:nth-child(5) {
+.rated-div {
 	display: flex;
+	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
-	height: 3rem;
+	gap: .5rem;
+	padding: 1rem;
+	height: 4rem;
+	color: hsl(300, 43%, 22%);
+	font-weight: 700;
 	width: 100%;
 	margin-bottom: .5rem;
 	background-color: hsl(300, 6%, 88%);
+	border-radius: var(--corner-radius);
 }
 
-.product-grid div:nth-child(6),
-:nth-child(7),
-:nth-child(8) {
+figure {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.testimony {
 	background-color: hsl(300, 43%, 22%);
 	margin: .3rem 0;
+	border-radius: var(--corner-radius);
+	color: white;
+	padding: 2em;
+	font-size: 1.2rem;
+	line-height: 1.25;
 }
 
 .product-grid div:nth-child(6) {
@@ -66,7 +84,29 @@ body {
 }
 
 .product-grid div:nth-child(8) {
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
+}
+
+.testimony-image {
+	width: 3em;
+	border-radius: 50%;
+	margin-right: 1em;
+}
+
+.testimony-info {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	margin-bottom: 2em;
+	justify-content: flex-start;
+}
+
+.testimony-info span:first-child {
+	font-weight: 700;
+}
+
+.testimony-info span:nth-child(2) {
+	color: hsl(333, 80%, 67%);
 }
 
 .attribution {
