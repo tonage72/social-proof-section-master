@@ -29,11 +29,10 @@ body {
 .product-grid {
 	display: grid;
 	width: 100%;
-	place-items: center;
 	grid-template-columns: 1fr;
 }
 
-.product-grid p:first-child {
+.desc-main {
 	text-align: center;
 	font-size: 2.5rem;
 	font-weight: 500;
@@ -41,14 +40,16 @@ body {
 	margin: 2rem;
 }
 
-.summary-paragraph {
+.desc-sum {
 	line-height: 1.3rem;
 	text-align: center;
 	margin-bottom: 2rem;
 	color: hsl(303, 10%, 53%);
 }
 
-.rated-div {
+.rate1,
+.rate2,
+.rate3 {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -69,7 +70,9 @@ figure {
 	flex-flow: row nowrap;
 }
 
-.testimony {
+.test1,
+.test2,
+.test3 {
 	background-color: hsl(300, 43%, 22%);
 	margin: .3rem 0;
 	border-radius: var(--corner-radius);
@@ -79,11 +82,11 @@ figure {
 	line-height: 1.25;
 }
 
-.product-grid div:nth-child(6) {
+.test1 {
 	margin-top: 2rem;
 }
 
-.product-grid div:nth-child(8) {
+.test3 {
 	margin-bottom: 1rem;
 }
 
@@ -116,4 +119,77 @@ figure {
 
 .attribution a {
 	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 750px) {
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column nowrap;
+	}
+
+	.product-grid {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: min-content min-content min-content min-content;
+		grid-template-areas: 
+			"desc-main desc-main desc-main rate1 rate1 rate1"
+			"desc-main desc-main desc-main rate2 rate2 rate2"
+			"desc-sum desc-sum desc-sum rate3 rate3 rate3"
+			"test1 test1 test2 test2 test3 test3";
+		max-width: 75vw;
+		width: 75vw;
+		column-gap: 1rem;
+	}
+	
+	.desc-main {
+		grid-area: desc-main;
+		text-align: left;
+		font-weight: 700;
+		width: 8em;
+		margin: 0 0 1em 0;
+	}
+
+	.desc-sum {
+		grid-area: desc-sum;
+		text-align: left;
+		padding-right: 3em;
+		width: 25em;
+	}
+
+	.rate1,
+	.rate2,
+	.rate3 {
+		flex-flow: row nowrap;
+		justify-content: left;
+		width: 25em;
+		height: 3em;
+		gap: 2em;
+	}
+
+	.rate1 {
+		grid-area: rate1;
+	}
+	
+	.rate2 {
+		grid-area: rate2;
+		margin-left: 3em;
+	}
+
+	.rate3 {
+		grid-area: rate3;
+		margin-left: 6em;
+	}
+
+	.test1 {
+		grid-area: test1;
+	}
+
+	.test2 {
+		grid-area: test2;
+	}
+
+	.test3 {
+		grid-area: test3;
+	}
 }
