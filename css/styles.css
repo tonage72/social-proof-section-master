@@ -21,6 +21,9 @@ img {
 }
 
 body {
+	background-image: url("../images/bg-pattern-top-mobile.svg"), url("../images/bg-pattern-bottom-mobile.svg");
+	background-position: center top, center bottom;
+	background-repeat: no-repeat, no-repeat;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -78,6 +81,7 @@ body {
 figure {
 	display: flex;
 	flex-flow: row nowrap;
+	gap: .3em;
 }
 
 .testimony {
@@ -133,6 +137,7 @@ figure {
 
 @media (min-width: 920px) {
 	body {
+		background-image: url("../images/bg-pattern-top-desktop.svg"), url("../images/bg-pattern-bottom-desktop.svg");
 		display: flex;
 		flex-flow: column nowrap;
 		height: 100vh;
@@ -186,7 +191,7 @@ figure {
 		column-gap: 1.5em;
 		align-items: center;
 		justify-content: left;
-		padding-left: 2em;
+		padding-left: .85em;
 		width: 25em;
 		height: 3em;
 	}
